@@ -5,8 +5,6 @@ from collections import deque
 from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 
-# INPUT HANDLING
-
 def get_user_input():
     print("\n--- Student Lifestyle Input ---")
     try:
@@ -25,8 +23,6 @@ def get_user_input():
     except:
         print("Invalid input! Please enter numbers only.")
         return get_user_input()
-# RULE-BASED ENGINE + PROPOSITIONAL LOGIC
-
 # Rules expressed using propositional logic conditions
 logic_rules = [
     ("HIGH",  lambda d: d["sleep"] < 5 and d["study"] > 6),
@@ -53,8 +49,6 @@ def rule_based_prediction(data):
 
     return final_label, counts
 # PROBABILITY CALCULATION (Conditional Probability)
-
-# Small sample dataset for probability estimation
 sample_data = [
     {"sleep": 4, "assign": 6, "stress": "HIGH"},
     {"sleep": 5, "assign": 5, "stress": "MEDIUM"},
@@ -78,9 +72,7 @@ def conditional_probability(stress_label, condition_fn):
         return 0
 
     return match / total
-# MACHINE LEARNING MODEL (Decision Tree)
 
-# Creating a tiny dataset
 X = np.array([
     [4, 7, 6, 2],
     [6, 4, 5, 2],
